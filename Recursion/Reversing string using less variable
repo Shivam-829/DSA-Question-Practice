@@ -1,10 +1,9 @@
 #include<iostream>
 using namespace std;
 void reverseWord(string &str,int i){
-  int k=str.length()-i;
-if(i>=k)
+if(i>str.length()-i)
   return;
-  swap(str[i],str[k-1]);
+  swap(str[i],str[str.length()-i-1]);
   i++;
   reverseWord(str,i);
   
