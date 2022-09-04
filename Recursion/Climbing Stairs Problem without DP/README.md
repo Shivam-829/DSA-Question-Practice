@@ -1,27 +1,39 @@
-70. Climbing Stairs
-You are climbing a staircase. It takes n steps to reach the top.
+445. Add Two Numbers II
+Medium
 
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+3911
+
+232
+
+Add to List
+
+Share
+You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
  
 
 Example 1:
 
-Input: n = 2
-Output: 2
-Explanation: There are two ways to climb to the top.
-1. 1 step + 1 step
-2. 2 steps
+
+Input: l1 = [7,2,4,3], l2 = [5,6,4]
+Output: [7,8,0,7]
 Example 2:
 
-Input: n = 3
-Output: 3
-Explanation: There are three ways to climb to the top.
-1. 1 step + 1 step + 1 step
-2. 1 step + 2 steps
-3. 2 steps + 1 step
+Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [8,0,7]
+Example 3:
+
+Input: l1 = [0], l2 = [0]
+Output: [0]
  
 
 Constraints:
 
-1 <= n <= 45
+The number of nodes in each linked list is in the range [1, 100].
+0 <= Node.val <= 9
+It is guaranteed that the list represents a number that does not have leading zeros.
+ 
+
+Follow up: Could you solve it without reversing the input lists?
