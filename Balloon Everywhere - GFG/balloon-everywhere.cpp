@@ -39,7 +39,7 @@ public:
         int minSingleChar =  min(b, min(a, n));
         int minDoubleChar = min(l, o);
         minDoubleChar /= 2;
-        return min(minSingleChar, minDoubleChar);
+        return min(minSingleChar, minDoubleChar); 
     }
 };
 
