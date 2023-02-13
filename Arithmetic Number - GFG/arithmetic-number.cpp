@@ -16,7 +16,6 @@ public:
         }
        return (B-A)%C==0 && (B-A)/C>=0;
        
-        
     }
 };
 
