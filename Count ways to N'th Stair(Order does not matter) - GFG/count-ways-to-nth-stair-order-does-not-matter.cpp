@@ -7,18 +7,8 @@ class Solution{
 	public:
 		int nthStair(int n){
 		    //  Code here
-		   int temp = n;
-		   int count = 0;
-		   while(n>=0){
-		       if(n-2 >= 0){
-		           n = n-2;
-		           count++;
-		       }
-		       else break;
-		   }
-		   
-		   if(n == 0) return (temp-count)+1;
-		   return temp-count;
+		   if(n%2 == 0) return n - (n/2) +1;
+		   return n - (n/2);
 		}
 };
 
