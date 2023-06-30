@@ -12,27 +12,28 @@ class Solution
     {
         // Code here
           priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-          vector<int> dist(V,INT_MAX);
-          dist[S]=0;
-          pq.push({0,S});
-          while(!pq.empty())
-          {
-              int dis=pq.top().first;
-              int node=pq.top().second;
-              pq.pop();
-              for(auto it:adj[node])
-              {
-                  int edgewt=it[1];
-                  int topnode=it[0];
-                  
-                  if(dis+edgewt<dist[topnode])
-                  {
-                      dist[topnode]=dis+edgewt;
-                      pq.push({dist[topnode],topnode});
-                  }
-              }
-          }
-          return dist;
+        vector<int> dist(V,INT_MAX);
+        dist[S]=0;
+        pq.push({0,S});
+        while(!pq.empty())
+        {
+            int dis=pq.top().first;
+            int node=pq.top().second;
+            pq.pop();
+            for(auto it:adj[node])
+            {
+                int edgewt=it[1];
+                int adjnode=it[0];
+                
+                if(dis+edgewt<dist[adjnode])
+                {
+                    dist[adjnode]=dis+edgewt;
+                    pq.push({dist[adjnode],adjnode});
+                }
+            }
+        }
+        return dist;
+        
     }
 };
 
