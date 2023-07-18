@@ -10,34 +10,38 @@ class Solution
 	vector<int> topoSort(int V, vector<int> adj[]) 
 	{
 	    // code here
+	    queue<int> q;
+	    
+	    vector<int> ans;
 	    vector<int> indegree(V,0);
 	    for(int i=0;i<V;i++)
 	    {
 	        vector<int> data=adj[i];
 	        for(auto x:data)
-	          indegree[x]++;
+	        {
+	            indegree[x]++;
+	        }
+	        
 	    }
-	    queue<int> q;
-	    vector<int> ans;
-	    for(int i=0;i<V;i++)
-	    {
-	        if(indegree[i]==0)
-	         q.push(i);
-	    }
-	    while(!q.empty())
-	    {
-	    int u=q.front();
-	    ans.push_back(u);
-	    q.pop();
-	    for(auto v:adj[u])
-	    {
-	        indegree[v]--;
-	        if(indegree[v]==0)
-	         q.push(v);
-	    }
-	    }
-	    return ans;
+	     for(int i=0;i<V;i++)
+	     {
+	         if(indegree[i]==0)
+	          q.push(i);
+	     }
+	     while(!q.empty())
+	     {
+	         int u=q.front();
+	         q.pop();
+	         ans.push_back(u);
+	         for(auto x:adj[u])
+	         {
+	            indegree[x]--;
+	            if(indegree[x]==0)
+	             q.push(x);
+	         }
+	     }
 	    
+	   return ans;
 	}
 };
 
