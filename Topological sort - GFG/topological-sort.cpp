@@ -16,8 +16,8 @@ class Solution
 	    vector<int> indegree(V,0);
 	    for(int i=0;i<V;i++)
 	    {
-	        vector<int> data=adj[i];
-	        for(auto x:data)
+	       // vector<int> data=adj[i];
+	        for(auto x:adj[i])
 	        {
 	            indegree[x]++;
 	        }
